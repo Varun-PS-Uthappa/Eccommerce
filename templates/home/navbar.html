@@ -10,6 +10,9 @@
       text-align: left;
       flex-wrap: nowrap;
     }
+    .collapse{
+      color: aliceblue!important;
+    }
 
     .widget-header {
       margin-right: 10px;
@@ -35,7 +38,7 @@
 }
 </style>
 
-<header class="section-header">
+<header class="section-header bg-white shadow">
   <nav class="navbar navbar-dark navbar-expand-md bg-dark">
     <div class="container">
       <button
@@ -49,9 +52,9 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="collapses navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto" style="gap: 20px;">
-          <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-gray-600 hover:text-gray-900" href="{% url 'index' %}">Home</a></li>
           {% if user.is_authenticated %}
             <li class="nav-item"><a class="nav-link" href="{% url 'wishlist' %}">Wishlist ({{ request.user.wishlist.count }})</a></li>
           {% else %}

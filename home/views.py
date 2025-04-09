@@ -40,6 +40,7 @@ def index(request):
         'categories': categories,
         'selected_category': selected_category,
         'selected_sort': selected_sort,
+        'latest': products[-4:][::-1]
     }
     return render(request, 'home/index.html', context)
 
