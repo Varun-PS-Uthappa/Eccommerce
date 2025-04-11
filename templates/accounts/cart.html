@@ -180,10 +180,10 @@
 
 <script>
   var options = {
-    key: "rzp_test_5XxorWz3z1N2m5",
+    key: "rzp_test_EdWjro6jqnfHe0",
     amount: "{{ cart.get_cart_total_price_after_coupon|floatformat:0 }}",
     currency: "INR",
-    name: "Django Ecommerce Site",
+    name: "Codenish Ecommerce Site",
     description: "Purchased",
     order_id: "{{ payment.id }}",
 
@@ -192,9 +192,9 @@
       window.location.href = `http://127.0.0.1:8000/accounts/success/?order_id={{ payment.id }}`;
     },
     prefill: {
-      name: "Gaurav Kumar",
-      email: "gaurav.kumar@example.com",
-      contact: "9000090000",
+      name: "Uthappa PS",
+      email: "uthappa.ps@codenish.com",
+      contact: "7829040989",
     },
     notes: {
       address: "Razorpay Corporate Office",
@@ -205,13 +205,16 @@
   };
   var rzp1 = new Razorpay(options);
   rzp1.on("payment.failed", function (response) {
-    alert(response.error.code);
-    alert(response.error.description);
-    alert(response.error.source);
-    alert(response.error.step);
-    alert(response.error.reason);
-    alert(response.error.metadata.order_id);
-    alert(response.error.metadata.payment_id);
+   console.log("Success");
+      window.location.href = `http://127.0.0.1:8000/accounts/success/?order_id={{ payment.id }}`;
+
+<!--    alert(response.error.code);-->
+<!--    alert(response.error.description);-->
+<!--    alert(response.error.source);-->
+<!--    alert(response.error.step);-->
+<!--    alert(response.error.reason);-->
+<!--    alert(response.error.metadata.order_id);-->
+<!--    alert(response.error.metadata.payment_id);-->
   });
   document.getElementById("rzp-button1").onclick = function (e) {
     rzp1.open();
